@@ -1,0 +1,7 @@
+{% macro list_element(weaponry) %}
+<ul>
+    {% for key, value in weaponry.items() %}
+        <li>{{key + ' --- ' + value}}</li>
+    {% endfor %}
+</ul>
+{% endmacro %}

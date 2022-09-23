@@ -1,0 +1,20 @@
+{% import 'macros.html' as macros %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Оружейная</h1>
+    <div>{{weaponry['sword']}}!</div>
+    <div>{{weaponry['dagger']|upper}}</div>
+    {% if name=='Rednaskel' %}
+        <h1>Hello, {{name}}!</h1>
+    {% elif name=='Morgan' %}
+        <h1>Fuck you , {{name}}!</h1>
+    {% else %}
+        {{ macros.list_element(weaponry) }}
+    {% endif %}
+</body>
+</html>

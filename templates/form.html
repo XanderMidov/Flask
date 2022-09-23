@@ -1,0 +1,26 @@
+{% extends "boot.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="my_script.js"></script>
+{% endblock %}
+
+
+{% block message %}
+<h1>{{ name }}</h1>
+<form method="POST">
+
+    {{ form.name.label }} {{ form.name() }}
+    {% for sub in form.radio %}
+    <table>
+        <tr>
+            <td>{{ sub }}</td>
+            <td>{{ sub.label }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    <input type="submit" value="Go">
+</form>
+
+{% endblock %}
